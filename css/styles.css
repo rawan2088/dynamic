@@ -1,0 +1,468 @@
+/*
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ *
+ * For simplicity, no reset or normalize is added.
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+ * TODO: Feel free to make any changes you'd like to personalize your project. Alternatively,  * you can start from scratch!
+*/
+
+/* ---- Base Rules ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background: rgb(219, 226, 232);
+    background: linear-gradient(
+        0deg,
+        rgba(219, 226, 232, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #171a53;
+    padding: 0;
+}
+
+/* Typeography General*/
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+}
+
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 7em;
+        margin: 1em 4rem 0;
+    }
+}
+
+h2 {
+    border-bottom: 3px solid #b181ff;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 3em;
+}
+
+p {
+    line-height: 1.6em;
+}
+/* ---- Layout Rules ---- */
+main {
+    margin: 10vh 0em 0vh;
+}
+
+.main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+
+section {
+    position: relative;
+    min-height: 80vh;
+}
+
+/* ---- Module Rules ---- */
+
+
+
+/* Header Styles */
+.page__header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    overflow: hidden;
+}
+
+
+/* Footer Styles */
+.page__footer {
+    background: #171a53;
+    background-image: none;
+    background-size: auto;
+    padding: 50px 30px;
+    /* background-image: linear-gradient(270deg, transparent 50%, #504ae3 50% ); */
+    /* background-size: 11rem 3rem; */
+    background-image: linear-gradient(174deg, transparent 50%, #504ae3 50% );
+    font-size: 25;
+}
+
+.page__footer p {
+    color: #fff;
+}
+
+/* ---- Theme Rules ---- */
+/* Landing Container Styles */
+.landing__container {
+    padding: 1em;
+    text-align: left;
+}
+
+@media only screen and (min-width: 35em) {
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+section:nth-of-type(even) .landing__container {
+    margin-right: 0;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    background: rgba(189, 234, 9, 0.8);
+    background: linear-gradient(        0deg,        rgba(189, 234, 9, 0.5) 0%,        rgba(189, 234, 9, 1) 100%    );
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+section:nth-of-type(even) .landing__container::before {
+    content: '';
+    background: rgb(101, 151, 255);
+    background: linear-gradient(        0deg,        rgba(101, 151, 255, 0.5) 0%,        rgba(101, 151, 255, 1) 100%    );
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    z-index: -5;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    -webkit-transition: ease 0.5s all;
+    -moz-transition: ease 0.5s all;
+    -ms-transition: ease 0.5s all;
+    -o-transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(        0deg,        rgba(177, 129, 255, 0.5) 0%,        rgba(177, 129, 255, 1) 100%    );
+    position: absolute;
+    left: 3em;
+    bottom: -1em;
+    z-index: -5;
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    -webkit-transition: ease 0.5s all;
+    -moz-transition: ease 0.5s all;
+    -ms-transition: ease 0.5s all;
+    -o-transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) .landing__container::after {
+    content: '';
+    background: rgb(32, 21, 255);
+    background: linear-gradient(        0deg,        rgba(32, 21, 255, 0.5) 0%,        rgba(32, 21, 255, 1) 100%    );
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    -webkit-transition: ease 0.5s all;
+    -moz-transition: ease 0.5s all;
+    -ms-transition: ease 0.5s all;
+    -o-transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) .landing__container::after {
+    content: '';
+    background: rgb(10, 197, 161);
+    background: linear-gradient(        0deg,        rgba(10, 197, 161, 0.5) 0%,        rgba(10, 197, 161, 1) 100%    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+    -webkit-transition: ease 0.5s all;
+    -moz-transition: ease 0.5s all;
+    -ms-transition: ease 0.5s all;
+    -o-transition: ease 0.5s all;
+}
+
+section:nth-of-type(5n) .landing__container::after {
+    content: '';
+    background: rgb(177, 129, 255);
+    background: linear-gradient(
+        0deg,
+        rgba(177, 129, 255, 0.5) 0%,
+        rgba(177, 129, 255, 1) 100%
+    );
+    position: absolute;
+    right: 20vw;
+    bottom: -5em;
+    z-index: -5;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: .active class is applied through javascript and is not found in index.html */
+section.active {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+section h2,
+section p{
+  opacity: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transform: translate(-100%);
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  -o-transform: translate(-100%);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+
+section.active h2, 
+section.active p{
+  opacity: 1;
+
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  filter: blur(0);
+  -webkit-filter: blur(0);
+}
+
+section p {
+  transition: 1.3s;
+  -webkit-transition: 1.3s;
+  -moz-transition: 1.3s;
+  -ms-transition: 1.3s;
+  -o-transition: 1.3s;
+}
+
+
+section.active .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+    -webkit-animation: rotate 4s linear 0s infinite forwards;
+}
+
+section.active .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+    -webkit-animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+      }
+}
+
+/* TODO: Add styles for Comments section and form */
+.commentSection {
+  aspect-ratio: 4/2;
+  margin: 1rem auto ;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: #504ae3;
+  background-image: linear-gradient(-45deg, #2e2b8a, #504ae3);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.inputs{
+  width: 90%;
+}
+.comments{
+  text-align: left;
+}
+
+.comment h2{
+  font-size: 1.2rem;
+  font-weight: 500;
+
+}
+
+.comment {
+  color: white;
+}
+
+form *{
+  width: 90%;
+  height: 3rem;
+}
+form{
+  align-self: center;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+#commentsContainer h2{
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+  border: none;
+  margin-bottom: 10px;
+}
+
+.comment p{
+  margin: 1px;
+}
+
+.comment img{
+  width: 3em;
+  aspect-ratio: 1/1;
+  align-self: center;
+}
+
+.commentHeading {
+  display: flex; 
+  gap: 10px;
+}
+
+.commentHeading h3{
+  margin: 0;
+  font-size: 1.3em;
+}
+.commentHeading time{
+  font-size: .8em;
+}
+
+#ham{
+  font-size: 30px;
+}
+/* Navigation Styles*/
+
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+  }
+  .navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #171a53;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+  }
+  .navbar__menu li {
+      display: inline-block;
+    }
+    .navbar__menu .menu__link:hover {
+        background: #2015ff;
+        color: #fff;
+        transition: ease 0.3s all;
+    }
+      
+@media (min-width: 801px) {
+  .page__header:hover{
+  height: 50px;
+}
+
+}
+@media (max-width:800px) {
+  .show{
+    display: block;
+  }
+  nav{
+    display: none;
+  }
+  #ham{
+    padding: 5px 20px;
+    text-align: right;
+  }
+}
+
+.error{
+  border: 1px solid red;
+  color: red;
+}
+
+#totop{
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 10;
+  padding: .8em;
+  background-color: #171a53;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.errorMsg{
+  color: rgb(255, 51, 51); 
+  font-size: 0.8em;
+  margin: 0px; 
+  padding: 0px 0px 9px; 
+  height: fit-content; 
+  font-family: 'Courier New';
+}
