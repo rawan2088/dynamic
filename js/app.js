@@ -95,7 +95,7 @@ if (screen.width > 800) {
     headerContainer.classList.toggle("show");
   });
 }
-//  TODO: Add a comment form
+//  Comment Form
 let mainForm = document.querySelector("form");
 let userName = document.querySelector("#userName");
 let userEmail = document.querySelector("#userEmail");
