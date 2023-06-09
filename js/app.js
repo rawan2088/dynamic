@@ -193,6 +193,11 @@ function newComment() {
     } - ${date.getFullYear()}`;
     commentHeadingTextContainer.appendChild(time);
 
+    let email = document.createElement("p");
+    email.innerHTML = `${user.userEmail}`;
+    email.classList.add("email");
+    commentHeadingTextContainer.appendChild(email);
+
     let commentInnerText = document.createElement("p");
     commentInnerText.innerHTML = `${user.comment}`;
     commentInnerText.classList.add("comment__inner");

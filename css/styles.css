@@ -304,7 +304,6 @@ section.active .landing__container::after {
       }
 }
 
-/* TODO: Add styles for Comments section and form */
 .commentSection {
   aspect-ratio: 4/2;
   margin: 1rem auto ;
@@ -377,13 +376,28 @@ form{
   gap: 10px;
 }
 
+.commentHeading > div{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
 .commentHeading h3{
   margin: 0;
   font-size: 1.3em;
+  padding-right: 15px;
 }
+
+.commentHeading .email{
+  color: white;
+  font-size: .8em;
+  display: block;
+  text-decoration: none;
+  grid-column: span 2;
+}
+
 .commentHeading time{
   font-size: .8em;
-}
+  margin: auto 0;}
 
 #ham{
   font-size: 30px;
