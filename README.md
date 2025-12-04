@@ -1,21 +1,86 @@
 # Dynamic Web Page Project
 
-This project requires you to build a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
+_A project completed for the DECI Web Development Track._
+
+## Overview
+
+This project transforms a static landing page into a fully interactive and dynamic web page.  
+The page automatically generates navigation links based on existing sections, highlights the section currently visible to the user, saves comments locally, and provides smooth interactions such as a disappearing navigation bar and a scroll-to-top button.
 
 ---
 
-## Instructions
+## Features
 
-The starter project has some HTML and CSS styling to display a static version of the Dynamic Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+### 1. Dynamic Navigation Menu
 
-To get started, open `js/app.js` and start building out the app's functionality
+- The JavaScript file scans all `<section>` elements and creates matching navigation links.
+- Whenever a new section is added to the HTML, the navigation bar updates automatically.
 
-For more detailed requirements, see the project instructions in the Udacity Classroom.
-"# dynamic"
+### 2. Active Section Highlighting
 
-# Skills
+Two methods were implemented to detect which section is currently in the viewport:
 
--- First you need to know how to exactly know the element viewed by the client with js to make the active state effect
--- You need to know the when the client scrolled more with a certain amount
--- You need have a way to save the comments to the local storage
-"# dynamic" 
+- Bounding rectangle checks.
+- **Intersection Observer API** (final method used).
+
+The visible section is highlighted with an `active` class.
+
+### 3. Responsive Navbar Behavior
+
+- On large screens, the navbar hides when the user stops scrolling.
+- Reappears when the mouse moves to the top of the page or on hover.
+- On small screens, a hamburger menu toggles the navigation visibility.
+
+### 4. Comment System with Local Storage
+
+- Users can submit comments including:
+  - Name
+  - Email
+  - Comment text
+- Input validation is applied.
+- Comments are stored using `localStorage`, allowing them to persist between page reloads.
+
+### 5. Scroll to Top Button
+
+- Appears when the user scrolls down.
+- Returns to the top smoothly when clicked.
+
+---
+
+## File Structure
+
+.
+├── index.html
+├── css/
+│ ├── styles.css
+│ └── favicon.ico
+└── js/
+└── app.js
+
+---
+
+## How to Run
+
+1. Download or clone the project.
+2. Open `index.html` directly in your browser.
+3. Add more `<section>` elements to test the dynamic behavior.
+
+No server setup is required.
+
+---
+
+## Skills Practiced
+
+- DOM Manipulation
+- Handling scroll events
+- Intersection Observer API
+- Responsive behavior with JavaScript
+- Form validation
+- Using Local Storage
+- Building clean interactive UI components
+
+---
+
+## Notes
+
+This project was originally developed as part of **DECI** coursework, where the main objective was to convert a static landing page into a fully dynamic and user-interactive website using vanilla JavaScript.
